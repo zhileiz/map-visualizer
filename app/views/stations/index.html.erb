@@ -51,9 +51,9 @@
 		其中 key 表示插值的位置, 0~1.
 		    value 为颜色值.
      */
-	heatmapOverlay = new BMapLib.HeatmapOverlay({"radius":120});
+	heatmapOverlay = new BMapLib.HeatmapOverlay({"radius":10});
 	map.addOverlay(heatmapOverlay);
-	heatmapOverlay.setDataSet({data:points,max:578});
+	heatmapOverlay.setDataSet({data:points,max:600});
 	//是否显示热力图
     function openHeatmap(){
         heatmapOverlay.show();

@@ -1,9 +1,17 @@
+require 'csv'
 class StationsController < ApplicationController
+  require 'csv'
   before_action :set_station, only: [:show, :edit, :update, :destroy]
 
   # GET /stations
   # GET /stations.json
   def index
+    Station.delete_all
+    csv_text = File.read(Rails.root.join('app', 'assets', 'data.csv'))
+    csv = CSV.parse(csv_text, :headers => true)
+    csv.each do |row|
+      Station.create!(row.to_hash)
+    end
     @stations = Station.all
   end
 
