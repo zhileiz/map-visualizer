@@ -1,0 +1,72 @@
+<%= form_for(station) do |f| %>
+  <% if station.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(station.errors.count, "error") %> prohibited this station from being saved:</h2>
+
+      <ul>
+      <% station.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :longitude %>
+    <%= f.text_field :longitude %>
+  </div>
+
+  <div class="field">
+    <%= f.label :latitude %>
+    <%= f.text_field :latitude %>
+  </div>
+
+  <div class="field">
+    <%= f.label :kid %>
+    <%= f.number_field :kid %>
+  </div>
+
+  <div class="field">
+    <%= f.label :student %>
+    <%= f.number_field :student %>
+  </div>
+
+  <div class="field">
+    <%= f.label :young %>
+    <%= f.number_field :young %>
+  </div>
+
+  <div class="field">
+    <%= f.label :grown %>
+    <%= f.number_field :grown %>
+  </div>
+
+  <div class="field">
+    <%= f.label :thirty %>
+    <%= f.number_field :thirty %>
+  </div>
+
+  <div class="field">
+    <%= f.label :forty %>
+    <%= f.number_field :forty %>
+  </div>
+
+  <div class="field">
+    <%= f.label :fifty %>
+    <%= f.number_field :fifty %>
+  </div>
+
+  <div class="field">
+    <%= f.label :senior %>
+    <%= f.number_field :senior %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
